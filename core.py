@@ -172,13 +172,13 @@ def start() -> None:
         update_status('Frames not found...')
         return
     # create video
-    if roop.globals.keep_fps:
-        fps = detect_fps(roop.globals.target_path)
-        update_status(f'Creating video with {fps} FPS...')
-        create_video(roop.globals.target_path, fps)
+   # if roop.globals.keep_fps:
+       # fps = detect_fps(roop.globals.target_path)
+       # update_status(f'Creating video with {fps} FPS...')
+       # create_video(roop.globals.target_path, fps)
     else:
-        update_status('Creating video with 30 FPS...')
-        create_video(roop.globals.target_path)
+       # update_status('Creating video with 30 FPS...')
+       # create_video(roop.globals.target_path)
     # handle audio
     if roop.globals.skip_audio:
         move_temp(roop.globals.target_path, roop.globals.output_path)
@@ -190,8 +190,8 @@ def start() -> None:
             update_status('Restoring audio might cause issues as fps are not kept...')
         restore_audio(roop.globals.target_path, roop.globals.output_path)
     # clean temp
-    update_status('Cleaning temporary resources...')
-    clean_temp(roop.globals.target_path)
+    #update_status('Cleaning temporary resources...')
+    #clean_temp(roop.globals.target_path)
     # validate video
     if is_video(roop.globals.target_path):
         update_status('Processing to video succeed!')
